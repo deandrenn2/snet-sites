@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { posts } from '../../models/post';
+import { slateToHtml } from "@slate-serializers/html";
+
+const {title, content, image} = Astro.props
+
+// La función getStaticPaths() es necesaria para sitios estáticos de Astro.
+// Si estás usando SSR, no necesitarás esta función.
+export async function getStaticPaths() {
+    let data = await fetch(`${import.meta.env.VITE_CMSAPI}/api/posts`)
+    let posts: posts = await data.json()
+
+    return posts.docs.map((post) => {
+        return {
+            params: {slug: post.slug},
+            props: {title: post.titulo, content: post.contenido, image: post.imagen.sizes.tablet},
+        };
+    });
+}
+---
+<Layout title={title}>
+    <div class="mx-auto max-w-7xl w-full pb-8 pt-24">
+        <article>
+            <img class="w-full" src={`${import.meta.env.VITE_CMSAPI}${image.url}`} />
+            <h1 class="text-2xl text-center py-2" set:html={title} />
+            <div set:html={slateToHtml(content)} />
+        </article>
+    </div>
+</Layout>
