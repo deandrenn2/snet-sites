@@ -12,7 +12,7 @@ const pageTitle = "Nuestras publicaciones";
 <!-- El código de abajo es "la plantilla de su componente". Es solo HTML
      con un poco de magia que te ayudará a crear la plantilla del componente. -->
 <Layout pageTitle={pageTitle}>
-	<Banner transition:persist />
+	<Banner  client:load transition:persist/>
 	<h2 class="text-5xl p-10 text-center">Nuestras publicaciones</h2>
 	<div class="mx-auto max-w-7xl w-full  flex gap-4 justify-between  py-8">
 
