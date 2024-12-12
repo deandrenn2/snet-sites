@@ -1,9 +1,9 @@
 # SNET SITES
 ---
 ## BackeEnd
-Sitio creado con el CMS, Payload CMS. Inspirado en la página web de [https://ieenormalsuperiormm.edu.co/](https://ieenormalsuperiormm.edu.co/)
-  **Versión Payload: 2.0.0**
-  **Proyecto:*** payload-api
+Sitio creado con el CMS, Payload CMS. Inspirado en la página web de [https://ieenormalsuperiormm.edu.co/](https://ieenormalsuperiormm.edu.co/)  
+  **Versión Payload: 2.0.0**  
+  **Proyecto:*** payload-api  
   Configurar variable de entorno
   ```
   .env
@@ -11,8 +11,8 @@ Sitio creado con el CMS, Payload CMS. Inspirado en la página web de [https://ie
   PAYLOAD_PUBLIC_SERVER_URL=http://localhost:3000
   ```` 
 ---
-### Base de datos 
-MONGO DB
+### Base de datos
+MONGO DB  
   Configurar variable de entorno
   ```
   .env
@@ -20,7 +20,7 @@ MONGO DB
   ```` 
 
 
-Iniciar el proyecto
+Iniciar el proyecto   
   **Proyecto:*** astro-snet-sites
   ```
   _bash_
