@@ -12,56 +12,56 @@ const pageTitle = "Nuestras publicaciones";
 <!-- El código de abajo es "la plantilla de su componente". Es solo HTML
      con un poco de magia que te ayudará a crear la plantilla del componente. -->
 <Layout pageTitle={pageTitle}>
-	<Banner  client:load transition:persist/>
+	<Banner client:load transition:persist />
 	<h2 class="text-5xl p-10 text-center">Nuestras publicaciones</h2>
-	<div class="mx-auto max-w-7xl w-full  flex gap-4 justify-between  py-8">
-
+	<div
+		class="mx-auto max-w-7xl w-full grid grid-cols-3 gap-4 justify-between py-8"
+	>
 		{
 			postsSite.docs.map((post) => (
 				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-				<a 		href={`posts/${post.slug}`}>
-					<img
-						class="rounded-t-lg"
-						src={`${import.meta.env.VITE_CMSAPI}${post.imagen.sizes.card.url}`}
-						alt=""
+					<a href={`posts/${post.slug}`}>
+						<img
+							class="rounded-t-lg"
+							src={`${import.meta.env.VITE_CMSAPI}${post.imagen.sizes.card.url}`}
+							alt=""
 						/>
-				</a>
-				<div class="p-5">
-					<a 		href={`posts/${post.slug}`}>
-						<h5
-							class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-							set:html={post.titulo}
+					</a>
+					<div class="p-5">
+						<a href={`posts/${post.slug}`}>
+							<h5
+								class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+								set:html={post.titulo}
 							/>
-					</a>
-					<p
-						class="mb-3 font-normal text-gray-700 dark:text-gray-400"
-						set:html={post.extracto}
+						</a>
+						<p
+							class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+							set:html={post.extracto}
 						/>
-					<a
-						href={`posts/${post.slug}`}
-						class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+						<a
+							href={`posts/${post.slug}`}
+							class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 						>
-						Leer más
-						<svg
-							class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 14 10"
+							Leer más
+							<svg
+								class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+								aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 14 10"
 							>
-							<path
-								stroke="currentColor"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M1 5h12m0 0L9 1m4 4L9 9"
+								<path
+									stroke="currentColor"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M1 5h12m0 0L9 1m4 4L9 9"
 								/>
-						</svg>
-					</a>
+							</svg>
+						</a>
+					</div>
 				</div>
-			</div>
-
-))
-}
-</div>
+			))
+		}
+	</div>
 </Layout>
