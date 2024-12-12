@@ -1,7 +1,5 @@
 ---
 import type { Banner } from "../models/banner";
-
-console.log("¡Esto se ejecuta en tu terminal y no en el navegador!");
 const res = await fetch(`${import.meta.env.VITE_CMSAPI}/api/banners`); // http://localhost:4321/api/posts by default
 const { docs } = await res.json();
 const banners: Banner[] = docs;

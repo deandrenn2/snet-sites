@@ -6,13 +6,12 @@ const res = await fetch(
 
 const isMenuActive = (menu: string) => {
 	const pathname = new URL(Astro.request.url).pathname;
-	const currentPath = pathname; // remove the first "/"
-	console.log(currentPath, menu)
+	const currentPath = decodeURI(pathname); // remove the first "/"
 	return menu === currentPath;
 }
 const navlinks: NavItem = await res.json();
 
-const isActive:  string = "Inicio";
+console.log(navlinks, "¡Esto se ejecuta en tu terminal y no en el navegador!");
 ---
 
 <div class="fixed w-[100%] top-5 z-10">
@@ -70,11 +69,11 @@ const isActive:  string = "Inicio";
 				<div
 					class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
 				>
-					<div class="flex flex-shrink-0 items-center">
-						<a href="/" title="Página principal">
+					<div class="flex flex-shrink-0 items-center relative -top-4 -left-5">
+						<a href="/" title="Página principal" class="w-[200px] h-[40px]">
 							<img
-								class="h-8 w-auto"
-								src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+								class="w-[300px] absolute"
+								src="/escudo.png"
 								alt="Your Company"
 							/>
 						</a>

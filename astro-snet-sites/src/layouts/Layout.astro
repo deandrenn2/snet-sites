@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import './../style/style.css'
-// import ViewTransitions from 'astro/components/ViewTransitions.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 const { pageTitle } = Astro.props;
 ---
@@ -13,12 +13,12 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <ViewTransitions  />
   </head>
-  <body>
-    <!-- <ViewTransitions /> -->
-    <Header />
+  <body transition:animate="slide">
+    <Header/>
     <slot />
     <Footer />
-    <script  is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script is:inline  src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
   </body>
 </html>
