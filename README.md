@@ -3,7 +3,7 @@
 ## BackeEnd
 Sitio creado con el CMS, Payload CMS. Inspirado en la página web de [https://ieenormalsuperiormm.edu.co/](https://ieenormalsuperiormm.edu.co/)  
   **Versión Payload: 2.0.0**  
-  **Proyecto:*** payload-api  
+  **Proyecto:** payload-api  
   Configurar variable de entorno
   ```
   .env
@@ -21,7 +21,7 @@ MONGO DB
 
 
 Iniciar el proyecto   
-  **Proyecto:*** astro-snet-sites
+  **Proyecto:** astro-snet-sites
   ```
   _bash_
   npm run dev
