@@ -28,7 +28,8 @@ Iniciar el proyecto
   ```
 ---
 ## FrontEnd
-Creado con AstroJS, nombre del proyecto
+Creado con AstroJS   
+  **Proyecto:** astro-snet-sites
 
   ```
   _bash_
